@@ -55,7 +55,7 @@ class Song
   
   def self.create_from_filename(mp3)
     self.new_from_filename(mp3)
-    save
+    self.all << song
   end
   
   def self.alphabetical
