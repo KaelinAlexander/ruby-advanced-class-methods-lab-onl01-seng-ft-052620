@@ -56,6 +56,7 @@ class Song
   def self.create_from_filename(mp3)
     self.new_from_filename(mp3)
     self.all << song
+    @artist = song.artist_name
   end
   
   def self.alphabetical
