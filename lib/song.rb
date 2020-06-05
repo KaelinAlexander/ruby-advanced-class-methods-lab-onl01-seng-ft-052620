@@ -54,7 +54,13 @@ class Song
   end
   
   def self.create_from_filename(mp3)
-    self.new_from_filename(mp3)
+    file = mp3.delete_suffix(".mp3")
+    file_array = file.split(" - ")
+    artist_name = file_array[0]
+    name = file_array[1]
+    song = self.new
+    song.name = name
+    song.artist_name = artist_name
     self.all << song
     @artist = song.artist_name
   end
